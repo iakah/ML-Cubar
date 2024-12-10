@@ -9,6 +9,11 @@ class WebUI:
         self.run_in_new_terminal = args.run_in_new_terminal  # run in new terminal
         self.demo = gr.Blocks()
         self.tabs = []
+        if args.enable_data_processor_tab:
+            from modules.data_processor_tab import DataProcessorTab
+
+            self.data_processor_tab = DataProcessorTab(args)
+            self.tabs.append(self.data_processor_tab)
         if args.enable_trainer_tab:
             from modules.trainer_tab import TrainerTab
 
@@ -19,11 +24,6 @@ class WebUI:
 
             self.visualizer_tab = VisualizerTab(args)
             self.tabs.append(self.visualizer_tab)
-        if args.enable_data_processor_tab:
-            from modules.data_processor_tab import DataProcessorTab
-
-            self.data_processor_tab = DataProcessorTab(args)
-            self.tabs.append(self.data_processor_tab)
         if args.enable_exporter_tab:
             from modules.exporter_tab import ExporterTab
 
@@ -43,9 +43,9 @@ class WebUI:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        prog="nerfstudio webui",
-        description="A gradio based web-ui for nerfstudio.",
-        epilog="Source: https://github.com/nerfstudio-project/nerfstudio-webui",
+        prog="Cubar Nerfstudio Web",
+        description="Cubar gradio based web-ui for nerfstudio.",
+        epilog="Source: https://github.com/iakah/ML-Cubar",
     )
 
     parser.add_argument(

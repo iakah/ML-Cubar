@@ -1,7 +1,5 @@
 # Nerfstudio Gradio WebUI
 
-![Screenshot](screenshot.png)
-
 ## Introduction
 
 This repository provides a user-friendly web interface for [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio) using the [Gradio](https://gradio.app/) library. The Nerfstudio Gradio WebUI allows users to easily train, visualize, process data, and export models without the need for complex command-line interactions.
@@ -15,15 +13,24 @@ This repository provides a user-friendly web interface for [Nerfstudio](https://
 
 ## Installation
 
-1. Ensure that you have Nerfstudio (version >= 1.10) installed and set up properly.
+1. Ensure that you have Nerfstudio (version >= 1.10) installed and set up properly: [https://docs.nerf.studio/](https://docs.nerf.studio/)
 
 2. Install the required dependencies by running the following command in the Nerfstudio environment:
 
    ```bash
    pip install gradio
    ```
+   
+3. Install FFmpeg based on your operating system:
+  - Ubuntu/Debian: Use package manager
+  - MacOS: Use Homebrew
+  - Windows: Use Chocolatey or download from official website
 
-3. Clone this repository.
+4. Refer to the Nerfstudio documentation for specific COLMAP installation instructions:
+  [Nerfstudio Custom Dataset Guide](https://docs.nerf.studio/quickstart/custom_dataset.html)
+
+
+5. Clone this repository.
 
 ## Usage
 
@@ -50,12 +57,3 @@ This repository provides a user-friendly web interface for [Nerfstudio](https://
 ## Platforms
 
 Tested on Windows with 3070 and Linux with 2080ti. Multi-GPU untested. Subprocesses may not run properly on Windows when processing data.
-
-## Contributing
-
-This repo is still under developing and I'm currently an undergraduate student. Contributions to the Nerfstudio Gradio WebUI are super welcomed! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
-
-## Acknowledgments
-
-- [Nerfstudio](https://github.com/nerfstudio-project/nerfstudio) - The main repository for Nerfstudio.
-- [Gradio](https://gradio.app/) - The library used for building the web interface.
